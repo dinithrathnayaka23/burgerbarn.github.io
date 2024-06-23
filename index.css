@@ -1,0 +1,167 @@
+body {
+  font-family: 'Khand', sans-serif;
+}
+
+.navbar-nav {
+  flex: 1;
+  justify-content: space-between;
+}
+
+p {
+  color: white;
+}
+
+#din {
+  max-width: 200px;
+  height: auto;
+}
+
+.item {
+  text-align: start;
+  margin: 10px 0;
+  padding: 20px;
+}
+
+.item img {
+  width: 100%;
+  height: 250px; /* Fixed height for all images */
+  object-fit: cover; /* This will ensure the image covers the area without distortion */
+  border-radius: 10px;
+}
+
+.order-btn {
+  display: inline-block;
+  width: 200px;
+  margin: 20px auto;
+  padding: 10px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.8rem;
+  text-align: center;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+}
+
+.order-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.footer-icon {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  margin-right: 10px;
+}
+
+.horizontal {
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  margin: 20px 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .item {
+      text-align: center;
+  }
+}
+
+/* Existing CSS remains the same */
+
+/* Add these new animation keyframes and styles */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Apply animations to specific elements */
+
+.navbar-brand {
+  animation: fadeIn 1s ease-out;
+}
+
+.nav-item {
+  animation: fadeIn 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.nav-item:nth-child(1) { animation-delay: 0.1s; }
+.nav-item:nth-child(2) { animation-delay: 0.2s; }
+.nav-item:nth-child(3) { animation-delay: 0.3s; }
+.nav-item:nth-child(4) { animation-delay: 0.4s; }
+.nav-item:nth-child(5) { animation-delay: 0.5s; }
+
+#home img {
+  animation: fadeIn 1.5s ease-out;
+}
+
+#about img {
+  animation: pulse 2s infinite;
+}
+
+.item {
+  animation: fadeIn 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.item:nth-child(odd) {
+  animation: slideInFromLeft 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.item:nth-child(even) {
+  animation: slideInFromRight 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.order-btn {
+  transition: all 0.3s ease;
+}
+
+.order-btn:hover {
+  transform: scale(1.1);
+}
+
+.footer-icon {
+  transition: transform 0.3s ease;
+}
+
+.footer-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Add this for smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
